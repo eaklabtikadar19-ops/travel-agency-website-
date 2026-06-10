@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CallingHills — Offbeat Himalayan Journeys | Darjeeling · Kalimpong · Dooars · Sikkim</title>
+    <meta name="description" content="Discover soulful, offbeat Himalayan travel experiences across Darjeeling, Kalimpong, Dooars & Sikkim. Handcrafted journeys that answer with adventure.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+
+
+
+    <link rel="stylesheet" href="/css/main.css?v=1781126767130">
+</head>
+<body>
+    <!-- Global Shader Background -->
+    <div class="ambient-gradient-bg"></div>
+    <!-- ═══════════ LOADER ═══════════ -->
+    <div class="loader" id="loader">
+        <div class="loader-brand">Calling<span>Hills</span></div>
+        <div class="loader-bar-track">
+            <div class="loader-bar" id="loader-bar"></div>
+        </div>
+    </div>
+
+    <!-- ═══════════ NAVBAR ═══════════ -->
+    <nav class="navbar" id="navbar">
+        <a href="/index.html" class="nav-logo" id="nav-logo">
+            <div class="nav-logo-icon">
+                <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 3L6 28H14L18 20L22 28H30L18 3Z" fill="url(#logoGrad)" opacity="0.9"/>
+                    <path d="M10 30L14 22L18 30L22 22L26 30" stroke="url(#logoGrad2)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <defs>
+                        <linearGradient id="logoGrad" x1="18" y1="3" x2="18" y2="28">
+                            <stop offset="0%" stop-color="#C8A96E"/>
+                            <stop offset="100%" stop-color="#8B7345"/>
+                        </linearGradient>
+                        <linearGradient id="logoGrad2" x1="10" y1="22" x2="26" y2="30">
+                            <stop offset="0%" stop-color="#C8A96E" stop-opacity="0.6"/>
+                            <stop offset="100%" stop-color="#C8A96E" stop-opacity="0.2"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <div class="nav-logo-text">Calling<span>Hills</span></div>
+        </a>
+
+        <ul class="nav-links" id="nav-links">
+            <li><a href="/destinations.html">Destinations</a></li>
+            <li><a href="/packages.html">Packages</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/gallery.html">Gallery</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+        </ul>
+
+        <div class="nav-right">
+            <a href="/packages.html" class="nav-cta" id="nav-cta">Plan My Trip</a>
+            <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+<div style="height: 72px;"></div>
+<section class="contact-section" id="contact">
+        <!-- CTA Strip -->
+        <div class="cta-strip">
+            <div class="cta-strip-inner">
+                <div class="cta-strip-text">
+                    "Ready to Answer<br>the Call of the Hills?"
+                </div>
+                <div class="cta-strip-btns">
+                    <button class="btn-primary" onclick="openEnquiryModal()">Enquire Now &rarr;</button>
+                    <button class="btn-secondary" style="border-color: rgba(255,255,255,0.2); color: white;" onclick="openEnquiryModal()">Plan My Custom Trip</button>
+                </div>
+            </div>
+        </div>
+
+                <div class="contact-container">
+            <!-- Left Side: Enquiry Form -->
+            <div class="contact-left">
+                <h2>Let's Plan Your Journey</h2>
+                <p style="color: var(--ch-mist); margin-bottom: 30px;">Free consultation. No pressure. Just honest travel advice.</p>
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contact-form" onsubmit="event.preventDefault(); alert('Enquiry Sent Successfully!');">
+                        <div class="form-group">
+                            <label class="form-label">Name</label>
+                            <input type="text" class="form-control" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" placeholder="Enter your email address" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Phone / WhatsApp</label>
+                            <input type="tel" class="form-control" placeholder="Enter your phone number" required>
+                        </div>
+                        <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                            <div>
+                                <label class="form-label">Destination</label>
+                                <select class="form-control" required>
+                                    <option value="" disabled selected>Select Area</option>
+                                    <option>Darjeeling Hills</option>
+                                    <option>Kalimpong Hills</option>
+                                    <option>Dooars</option>
+                                    <option>Sikkim — North</option>
+                                    <option>Sikkim — West</option>
+                                    <option>Sikkim — East</option>
+                                    <option>Sikkim — South</option>
+                                    <option>Trekking</option>
+                                    <option>Custom</option>
+                                    <option>Not decided yet</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="form-label">Travellers</label>
+                                <input type="number" class="form-control" placeholder="No. of people" min="1" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Travel Month</label>
+                            <select class="form-control" required>
+                                <option value="" disabled selected>When are you travelling?</option>
+                                <option>Flexible</option>
+                                <option>January</option><option>February</option><option>March</option>
+                                <option>April</option><option>May</option><option>June</option>
+                                <option>July</option><option>August</option><option>September</option>
+                                <option>October</option><option>November</option><option>December</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Your Message</label>
+                            <textarea class="form-control" rows="4" placeholder="Tell us more about your trip requirements..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Send Enquiry &rarr;</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Right Side: Maps & Contact Info -->
+            <div class="contact-right">
+                <div class="contact-maps-grid">
+                    <div class="map-wrapper">
+                        <h4>Darjeeling Office</h4>
+                        <div class="map-container-small">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d113619.66442651478!2d88.1924527960113!3d27.033190892095404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e42e654cf501bb%3A0x4175555979d4702a!2sDarjeeling%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1701382400000!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                    <div class="map-wrapper">
+                        <h4>Kolkata Office</h4>
+                        <div class="map-container-small">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.090547746197!2d88.3592!3d22.5726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277a064215cb3%3A0x3342ed2389d023f0!2sKolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1701382400000!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-info" style="margin-top: 40px;">
+                    <div class="contact-list">
+                        <div class="contact-list-item">
+                            <div class="contact-list-icon">📞</div>
+                            <div class="contact-list-text">+91 62895 90603<br>+91 91238 43327</div>
+                        </div>
+                        <div class="contact-list-item">
+                            <div class="contact-list-icon">💬</div>
+                            <div class="contact-list-text">WhatsApp: +91 90519 66561</div>
+                        </div>
+                        <div class="contact-list-item">
+                            <div class="contact-list-icon">📧</div>
+                            <div class="contact-list-text">hello@callinghills.com</div>
+                        </div>
+                        <div class="contact-list-item">
+                            <div class="contact-list-icon">🌐</div>
+                            <div class="contact-list-text">www.callinghills.com</div>
+                        </div>
+                    </div>
+
+                    <div class="contact-offices">
+                        <div class="office">
+                            <h4>Darjeeling Office</h4>
+                            <p>Senchal Tiger Hill Road, Darjeeling – 734102, West Bengal</p>
+                        </div>
+                        <div class="office">
+                            <h4>Kolkata Office</h4>
+                            <p>35 Tarun Sen Pally Road, Kolkata – 700079, West Bengal</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-trust">
+                        Govt. of India & Govt. of West Bengal Verified Travel Service<br>
+                        Business Banking Partner – State Bank of India (SBI)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<footer class="footer">
+        <div class="footer-watermark">CallingHills</div>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="/index.html" class="nav-logo">
+                        <div class="nav-logo-icon">
+                            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 3L6 28H14L18 20L22 28H30L18 3Z" fill="url(#logoGrad3)" opacity="0.9"/>
+                                <path d="M10 30L14 22L18 30L22 22L26 30" stroke="url(#logoGrad4)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                                <defs>
+                                    <linearGradient id="logoGrad3" x1="18" y1="3" x2="18" y2="28">
+                                        <stop offset="0%" stop-color="#C8A96E"/>
+                                        <stop offset="100%" stop-color="#8B7345"/>
+                                    </linearGradient>
+                                    <linearGradient id="logoGrad4" x1="10" y1="22" x2="26" y2="30">
+                                        <stop offset="0%" stop-color="#C8A96E" stop-opacity="0.6"/>
+                                        <stop offset="100%" stop-color="#C8A96E" stop-opacity="0.2"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <div class="nav-logo-text" style="font-size: 24px;">Calling<span>Hills</span></div>
+                    </a>
+                    <p>Discover Hidden Trails, Hill Villages & Nature's Soul</p>
+                </div>
+                
+                <div class="footer-links-grid">
+                    <div class="footer-links">
+                        <h4>Explore</h4>
+                        <ul>
+                            <li><a href="/destinations.html">Destinations</a></li>
+                            <li><a href="/packages.html">Signature Packages</a></li>
+                            <li><a href="/treks.html">Trekking Routes</a></li>
+                            <li><a href="/about.html#services">Our Services</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="/about.html">About Us</a></li>
+                            <li><a href="/about.html">About</a></li>
+            <li><a href="/gallery.html">Gallery</a></li>
+                            <li><a href="/contact.html">Contact Us</a></li>
+                            <li><a href="#">B2B Partnership</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-social">
+                    <h4>Connect With Us</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">IN</a>
+                        <a href="#" class="social-icon">FB</a>
+                        <a href="#" class="social-icon">WA</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>&copy; 2026 CallingHills. All rights reserved.</div>
+                <div>Crafted with &hearts; in the Himalayas</div>
+                <div>
+                    <a href="#">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        &uarr;
+    </button>
+
+    <!-- ═══════════ MODAL & CART SYSTEM ═══════════ -->
+    <div class="enquiry-modal" id="enquiry-modal">
+        <div class="enquiry-modal-content">
+            <button class="modal-close" onclick="closeEnquiryModal()">&times;</button>
+            <div style="padding: 40px;">
+                <h3 style="font-family: var(--font-heading); font-size: 24px; color: var(--ch-mist); margin-bottom: 24px;">Enquire Now</h3>
+                <!-- Clone of contact form -->
+                <div id="modal-form-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Cart Icon -->
+    <button class="floating-cart-btn" onclick="toggleCart()">
+        🛒
+        <span class="cart-badge" id="cart-badge">0</span>
+    </button>
+
+    <!-- Cart Drawer -->
+    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <div class="cart-title">Your Trip List</div>
+            <button class="cart-close" onclick="toggleCart()">&times;</button>
+        </div>
+        <div class="cart-body" id="cart-items">
+            <!-- Items injected by JS -->
+            <p style="color: var(--ch-text-mid); text-align: center; margin-top: 40px; font-family: var(--font-body);">Your list is empty.</p>
+        </div>
+        <div class="cart-footer">
+            <button class="cart-checkout-btn" onclick="proceedToEnquiry()">Proceed to Enquiry &rarr;</button>
+        </div>
+    </div>
+
+    <script type="module" src="/js/main.js"></script>
+</body>
+</html>

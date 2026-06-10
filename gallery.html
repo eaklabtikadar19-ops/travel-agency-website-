@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CallingHills — Offbeat Himalayan Journeys | Darjeeling · Kalimpong · Dooars · Sikkim</title>
+    <meta name="description" content="Discover soulful, offbeat Himalayan travel experiences across Darjeeling, Kalimpong, Dooars & Sikkim. Handcrafted journeys that answer with adventure.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+
+
+
+    <link rel="stylesheet" href="/css/main.css?v=1781126767141">
+</head>
+<body>
+    <div class="ambient-gradient-bg"></div>
+    <!-- ═══════════ LOADER ═══════════ -->
+    <div class="loader" id="loader">
+        <div class="loader-brand">Calling<span>Hills</span></div>
+        <div class="loader-bar-track">
+            <div class="loader-bar" id="loader-bar"></div>
+        </div>
+    </div>
+
+    <!-- ═══════════ NAVBAR ═══════════ -->
+    <nav class="navbar" id="navbar">
+        <a href="/index.html" class="nav-logo" id="nav-logo">
+            <div class="nav-logo-icon">
+                <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 3L6 28H14L18 20L22 28H30L18 3Z" fill="url(#logoGrad)" opacity="0.9"/>
+                    <path d="M10 30L14 22L18 30L22 22L26 30" stroke="url(#logoGrad2)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <defs>
+                        <linearGradient id="logoGrad" x1="18" y1="3" x2="18" y2="28">
+                            <stop offset="0%" stop-color="#C8A96E"/>
+                            <stop offset="100%" stop-color="#8B7345"/>
+                        </linearGradient>
+                        <linearGradient id="logoGrad2" x1="10" y1="22" x2="26" y2="30">
+                            <stop offset="0%" stop-color="#C8A96E" stop-opacity="0.6"/>
+                            <stop offset="100%" stop-color="#C8A96E" stop-opacity="0.2"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <div class="nav-logo-text">Calling<span>Hills</span></div>
+        </a>
+
+        <ul class="nav-links" id="nav-links">
+            <li><a href="/destinations.html">Destinations</a></li>
+            <li><a href="/packages.html">Packages</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/gallery.html">Gallery</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+        </ul>
+
+        <div class="nav-right">
+            <a href="/packages.html" class="nav-cta" id="nav-cta">Plan My Trip</a>
+            <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+    
+    
+    
+    
+    <!-- Image Trail CSS -->
+    <link rel="stylesheet" href="/css/image-trail.css">
+    
+    
+
+    <script type="module">
+        import { initImageTrail } from '/js/image-trail.js';
+        const images = [
+            '/images/gallery (1).jpg',
+            '/images/gallery (2).jpg',
+            '/images/gallery (3).jpg',
+            '/images/gallery (4).jpg',
+            '/images/gallery (5).jpg',
+            '/images/gallery (6).jpg',
+            '/images/gallery (7).jpg',
+            '/images/gallery (8).jpg',
+            '/images/gallery (9).jpg',
+            '/images/gallery (10).jpg',
+            '/images/gallery (11).jpg',
+            '/images/gallery (12).jpg',
+            '/images/gallery (13).jpg',
+            '/images/gallery (14).jpg',
+            '/images/gallery (15).jpg',
+            '/images/gallery (16).jpg',
+            '/images/gallery (17).jpg',
+            '/images/gallery (18).jpg',
+            '/images/gallery (19).jpg',
+            '/images/gallery (20).jpg',
+            '/images/gallery (21).jpg',
+            '/images/gallery (22).jpg',
+            '/images/gallery (23).jpg',
+            '/images/gallery (24).jpg'
+        ];
+        
+        // Initialize Image Trail
+        initImageTrail('#main-gallery-trail', images, 1);
+    </script>
+<style>
+        /* Endless Marquee Container */
+        .marquee-wrapper {
+            width: 100%;
+            overflow: hidden;
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .marquee-track {
+            display: flex;
+            gap: 24px;
+            width: max-content;
+            animation: endless-scroll 50s linear infinite;
+        }
+
+        .marquee-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes endless-scroll {
+            0% { transform: translateX(0); }
+            /* 24 items + 24 gaps. Shift exactly halfway. Halfway point = exactly the width of one set + gaps. */
+            100% { transform: translateX(calc(-50% - 12px)); }
+        }
+
+        /* Gallery Items */
+        .marquee-item {
+            width: 300px;
+            aspect-ratio: 4/5;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            flex-shrink: 0;
+            background: rgba(13, 31, 23, 0.1);
+        }
+
+        .marquee-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Zig-Zag Staggering */
+        .marquee-item:nth-child(even) {
+            transform: translateY(40px);
+        }
+        .marquee-item:nth-child(odd) {
+            transform: translateY(-40px);
+        }
+
+        /* Hover Effects */
+        .marquee-item:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+        }
+
+        .marquee-item:nth-child(even):hover {
+            transform: translateY(25px); /* Lift slightly from 40px */
+        }
+        .marquee-item:nth-child(odd):hover {
+            transform: translateY(-55px); /* Lift slightly from -40px */
+        }
+
+        .marquee-item:hover img {
+            transform: scale(1.08);
+        }
+
+        /* Lightbox Modal */
+        .lightbox-modal {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(13, 31, 23, 0.95);
+            backdrop-filter: blur(15px);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        .lightbox-modal.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .lightbox-content {
+            max-width: 95vw;
+            max-height: 95vh;
+            border-radius: 12px;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+            transform: scale(0.95);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            object-fit: contain;
+        }
+
+        .lightbox-modal.active .lightbox-content {
+            transform: scale(1);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 50px;
+            line-height: 1;
+            font-weight: 300;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            z-index: 10000;
+        }
+        .lightbox-close:hover {
+            color: var(--ch-gold);
+        }
+    </style>
+
+<section class="endless-gallery-section" style="background: var(--ch-cream-light); padding: 80px 0 120px 0;">
+        <div style="text-align: center; margin-bottom: 40px;">
+            <div class="section-tag" style="color: var(--ch-gold);">✦ THE FULL COLLECTION</div>
+            <h2 class="section-title" style="color: #1a1a1a; font-family: var(--font-heading); font-size: 36px; margin-top: 12px;">Curated Moments</h2>
+        </div>
+        
+        <div class="marquee-wrapper">
+            <div class="marquee-track">
+                <!-- First Set -->
+                
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (1).jpg')">
+                <img src="/images/gallery (1).jpg" alt="Gallery Image 1" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (2).jpg')">
+                <img src="/images/gallery (2).jpg" alt="Gallery Image 2" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (3).jpg')">
+                <img src="/images/gallery (3).jpg" alt="Gallery Image 3" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (4).jpg')">
+                <img src="/images/gallery (4).jpg" alt="Gallery Image 4" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (5).jpg')">
+                <img src="/images/gallery (5).jpg" alt="Gallery Image 5" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (6).jpg')">
+                <img src="/images/gallery (6).jpg" alt="Gallery Image 6" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (7).jpg')">
+                <img src="/images/gallery (7).jpg" alt="Gallery Image 7" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (8).jpg')">
+                <img src="/images/gallery (8).jpg" alt="Gallery Image 8" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (9).jpg')">
+                <img src="/images/gallery (9).jpg" alt="Gallery Image 9" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (10).jpg')">
+                <img src="/images/gallery (10).jpg" alt="Gallery Image 10" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (11).jpg')">
+                <img src="/images/gallery (11).jpg" alt="Gallery Image 11" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (12).jpg')">
+                <img src="/images/gallery (12).jpg" alt="Gallery Image 12" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (13).jpg')">
+                <img src="/images/gallery (13).jpg" alt="Gallery Image 13" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (14).jpg')">
+                <img src="/images/gallery (14).jpg" alt="Gallery Image 14" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (15).jpg')">
+                <img src="/images/gallery (15).jpg" alt="Gallery Image 15" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (16).jpg')">
+                <img src="/images/gallery (16).jpg" alt="Gallery Image 16" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (17).jpg')">
+                <img src="/images/gallery (17).jpg" alt="Gallery Image 17" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (18).jpg')">
+                <img src="/images/gallery (18).jpg" alt="Gallery Image 18" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (19).jpg')">
+                <img src="/images/gallery (19).jpg" alt="Gallery Image 19" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (20).jpg')">
+                <img src="/images/gallery (20).jpg" alt="Gallery Image 20" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (21).jpg')">
+                <img src="/images/gallery (21).jpg" alt="Gallery Image 21" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (22).jpg')">
+                <img src="/images/gallery (22).jpg" alt="Gallery Image 22" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (23).jpg')">
+                <img src="/images/gallery (23).jpg" alt="Gallery Image 23" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (24).jpg')">
+                <img src="/images/gallery (24).jpg" alt="Gallery Image 24" loading="lazy">
+            </div>
+                <!-- Duplicate Set for Endless Loop -->
+                
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (1).jpg')">
+                <img src="/images/gallery (1).jpg" alt="Gallery Image 1" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (2).jpg')">
+                <img src="/images/gallery (2).jpg" alt="Gallery Image 2" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (3).jpg')">
+                <img src="/images/gallery (3).jpg" alt="Gallery Image 3" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (4).jpg')">
+                <img src="/images/gallery (4).jpg" alt="Gallery Image 4" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (5).jpg')">
+                <img src="/images/gallery (5).jpg" alt="Gallery Image 5" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (6).jpg')">
+                <img src="/images/gallery (6).jpg" alt="Gallery Image 6" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (7).jpg')">
+                <img src="/images/gallery (7).jpg" alt="Gallery Image 7" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (8).jpg')">
+                <img src="/images/gallery (8).jpg" alt="Gallery Image 8" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (9).jpg')">
+                <img src="/images/gallery (9).jpg" alt="Gallery Image 9" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (10).jpg')">
+                <img src="/images/gallery (10).jpg" alt="Gallery Image 10" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (11).jpg')">
+                <img src="/images/gallery (11).jpg" alt="Gallery Image 11" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (12).jpg')">
+                <img src="/images/gallery (12).jpg" alt="Gallery Image 12" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (13).jpg')">
+                <img src="/images/gallery (13).jpg" alt="Gallery Image 13" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (14).jpg')">
+                <img src="/images/gallery (14).jpg" alt="Gallery Image 14" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (15).jpg')">
+                <img src="/images/gallery (15).jpg" alt="Gallery Image 15" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (16).jpg')">
+                <img src="/images/gallery (16).jpg" alt="Gallery Image 16" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (17).jpg')">
+                <img src="/images/gallery (17).jpg" alt="Gallery Image 17" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (18).jpg')">
+                <img src="/images/gallery (18).jpg" alt="Gallery Image 18" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (19).jpg')">
+                <img src="/images/gallery (19).jpg" alt="Gallery Image 19" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (20).jpg')">
+                <img src="/images/gallery (20).jpg" alt="Gallery Image 20" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (21).jpg')">
+                <img src="/images/gallery (21).jpg" alt="Gallery Image 21" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (22).jpg')">
+                <img src="/images/gallery (22).jpg" alt="Gallery Image 22" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (23).jpg')">
+                <img src="/images/gallery (23).jpg" alt="Gallery Image 23" loading="lazy">
+            </div>
+            <div class="marquee-item" onclick="openLightbox('/images/gallery (24).jpg')">
+                <img src="/images/gallery (24).jpg" alt="Gallery Image 24" loading="lazy">
+            </div>
+            </div>
+        </div>
+    </section>
+
+<section class="gallery-section" style="background: var(--ch-forest-deep); min-height: auto; position: relative; overflow: hidden;">
+        <style>
+        .glowing-interactive-text {
+            font-family: var(--font-heading);
+            font-size: 56px;
+            margin-bottom: 12px;
+            background: linear-gradient(90deg, #C8A96E, #ffffff, #C8A96E);
+            background-size: 200% auto;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: text-shine 4s linear infinite, text-float 4s ease-in-out infinite;
+            text-shadow: 0 0 30px rgba(200, 169, 110, 0.3);
+            font-weight: 400;
+        }
+
+        .interactive-subtitle {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            animation: text-pulse 3s ease-in-out infinite;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        @keyframes text-shine {
+            to { background-position: 200% center; }
+        }
+
+        @keyframes text-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        @keyframes text-pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+        
+        .mouse-icon {
+            display: inline-block;
+            width: 24px;
+            height: 36px;
+            border: 2px solid rgba(255,255,255,0.6);
+            border-radius: 12px;
+            position: relative;
+            margin-top: 24px;
+            animation: text-float 4s ease-in-out infinite reverse;
+        }
+        .mouse-icon::before {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 6px;
+            background: var(--ch-gold);
+            border-radius: 2px;
+            animation: scroll-wheel 2s infinite;
+        }
+        @keyframes scroll-wheel {
+            0% { top: 6px; opacity: 1; }
+            100% { top: 16px; opacity: 0; }
+        }
+        </style>
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; z-index: 10; pointer-events: none; width: 100%;">
+            <div class="section-tag" style="color: var(--ch-gold); margin-bottom: 16px; letter-spacing: 3px;">✦ INTERACTIVE</div>
+            <h2 class="glowing-interactive-text">Memories in Motion</h2>
+            <p class="interactive-subtitle">Move your mouse or drag across the dark canvas to reveal hidden moments</p>
+            <div class="mouse-icon"></div>
+        </div>
+        <div style="width: 100%; height: 400px; padding: 0 20px; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1;">
+            <div class="image-trail-container" id="main-gallery-trail" style="height: 100%; width: 100%;"></div>
+        </div>
+    </section>
+    
+    
+
+    <!-- Lightbox Modal HTML -->
+    <div class="lightbox-modal" id="lightbox-modal" onclick="closeLightbox(event)">
+        <button class="lightbox-close" onclick="closeLightbox(event)">&times;</button>
+        <img src="" alt="Full Screen Image" class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const modal = document.getElementById('lightbox-modal');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            modal.classList.add('active');
+        }
+
+        function closeLightbox(event) {
+            // Close if clicking outside the image or on the close button
+            if (event.target.id === 'lightbox-modal' || event.target.classList.contains('lightbox-close')) {
+                const modal = document.getElementById('lightbox-modal');
+                modal.classList.remove('active');
+            }
+        }
+    </script>
+<footer class="footer">
+        <div class="footer-watermark">CallingHills</div>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="/index.html" class="nav-logo">
+                        <div class="nav-logo-icon">
+                            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 3L6 28H14L18 20L22 28H30L18 3Z" fill="url(#logoGrad3)" opacity="0.9"/>
+                                <path d="M10 30L14 22L18 30L22 22L26 30" stroke="url(#logoGrad4)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                                <defs>
+                                    <linearGradient id="logoGrad3" x1="18" y1="3" x2="18" y2="28">
+                                        <stop offset="0%" stop-color="#C8A96E"/>
+                                        <stop offset="100%" stop-color="#8B7345"/>
+                                    </linearGradient>
+                                    <linearGradient id="logoGrad4" x1="10" y1="22" x2="26" y2="30">
+                                        <stop offset="0%" stop-color="#C8A96E" stop-opacity="0.6"/>
+                                        <stop offset="100%" stop-color="#C8A96E" stop-opacity="0.2"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <div class="nav-logo-text" style="font-size: 24px;">Calling<span>Hills</span></div>
+                    </a>
+                    <p>Discover Hidden Trails, Hill Villages & Nature's Soul</p>
+                </div>
+                
+                <div class="footer-links-grid">
+                    <div class="footer-links">
+                        <h4>Explore</h4>
+                        <ul>
+                            <li><a href="/destinations.html">Destinations</a></li>
+                            <li><a href="/packages.html">Signature Packages</a></li>
+                            <li><a href="/treks.html">Trekking Routes</a></li>
+                            <li><a href="/about.html#services">Our Services</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="/about.html">About Us</a></li>
+                            <li><a href="/about.html">About</a></li>
+            <li><a href="/gallery.html">Gallery</a></li>
+                            <li><a href="/contact.html">Contact Us</a></li>
+                            <li><a href="#">B2B Partnership</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-social">
+                    <h4>Connect With Us</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">IN</a>
+                        <a href="#" class="social-icon">FB</a>
+                        <a href="#" class="social-icon">WA</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>&copy; 2026 CallingHills. All rights reserved.</div>
+                <div>Crafted with &hearts; in the Himalayas</div>
+                <div>
+                    <a href="#">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        &uarr;
+    </button>
+
+    <!-- ═══════════ MODAL & CART SYSTEM ═══════════ -->
+    <div class="enquiry-modal" id="enquiry-modal">
+        <div class="enquiry-modal-content">
+            <button class="modal-close" onclick="closeEnquiryModal()">&times;</button>
+            <div style="padding: 40px;">
+                <h3 style="font-family: var(--font-heading); font-size: 24px; color: var(--ch-mist); margin-bottom: 24px;">Enquire Now</h3>
+                <!-- Clone of contact form -->
+                <div id="modal-form-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Cart Icon -->
+    <button class="floating-cart-btn" onclick="toggleCart()">
+        🛒
+        <span class="cart-badge" id="cart-badge">0</span>
+    </button>
+
+    <!-- Cart Drawer -->
+    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <div class="cart-title">Your Trip List</div>
+            <button class="cart-close" onclick="toggleCart()">&times;</button>
+        </div>
+        <div class="cart-body" id="cart-items">
+            <!-- Items injected by JS -->
+            <p style="color: var(--ch-text-mid); text-align: center; margin-top: 40px; font-family: var(--font-body);">Your list is empty.</p>
+        </div>
+        <div class="cart-footer">
+            <button class="cart-checkout-btn" onclick="proceedToEnquiry()">Proceed to Enquiry &rarr;</button>
+        </div>
+    </div>
+
+    <script type="module" src="/js/main.js"></script>
+</body>
+</html>
