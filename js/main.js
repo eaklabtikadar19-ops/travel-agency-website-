@@ -38,6 +38,8 @@ gsap.registerPlugin(ScrollTrigger);
             return;
         }
         const canvas = document.getElementById('hero-canvas');
+        if (!canvas) return;
+        
         const renderer = new THREE.WebGLRenderer({
             canvas,
             alpha: true,
