@@ -102,8 +102,13 @@
             '/images/gallery (24).jpg'
         ];
         
-        // Initialize Image Trail
-        initImageTrail('#main-gallery-trail', images, 1);
+        // Initialize Image Trail safely
+        const init = () => initImageTrail('#main-gallery-trail', images, 4);
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
     </script>
 <style>
         /* Endless Marquee Container */
